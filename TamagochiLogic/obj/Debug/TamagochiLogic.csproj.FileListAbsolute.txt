@@ -1,0 +1,8 @@
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\TamagochiLogic.dll
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\TamagochiLogic.pdb
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\obj\Debug\TamagochiLogic.csprojResolveAssemblyReference.cache
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\obj\Debug\TamagochiLogic.dll
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\obj\Debug\TamagochiLogic.pdb
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\obj\Debug\TamagochiLogic.Properties.Resources.resources
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\obj\Debug\TamagochiLogic.csproj.GenerateResource.Cache
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\System.Threading.Timer.dll
