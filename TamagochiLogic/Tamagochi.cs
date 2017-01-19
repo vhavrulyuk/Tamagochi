@@ -1,4 +1,5 @@
 using System;
+using System.Windows.Media;
 
 namespace TamagochiLogic
 {
@@ -13,6 +14,7 @@ namespace TamagochiLogic
         protected int water;
         protected string name;
         protected long age;
+        protected MediaPlayer mp;
 
         public string Name
         {
@@ -60,10 +62,8 @@ namespace TamagochiLogic
         }
 
         // Operation
-        public virtual void ProduceSound()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
+        public abstract void ProduceSound();
+        
 
 // Operation
 // return TamagochiState

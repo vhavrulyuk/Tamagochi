@@ -40,5 +40,11 @@ namespace Tamagochi
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window thisWindow = Window.GetWindow(this);
+            thisWindow?.Close();
+        }
     }
 }

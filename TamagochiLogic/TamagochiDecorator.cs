@@ -14,7 +14,7 @@ namespace TamagochiLogic
             set { tamagochi.Name = value; }
         }
 
-        public TamagochiDecorator(ITamagochi tamagochi)
+        public TamagochiDecorator(Tamagochi tamagochi)
         {
             this.tamagochi = tamagochi;
         }

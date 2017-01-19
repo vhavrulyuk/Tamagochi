@@ -8,12 +8,13 @@ namespace TamagochiLogic
 {
     internal class TamagochiCreator
     {
-        public static Tamagochi CreateTamagochi(TamagochiType type)
+        public static ITamagochi CreateTamagochi(TamagochiType type)
         {
             switch (type)
             {
                 case TamagochiType.Cat:
-                    return new Cat();
+                    return new DrumNoiseDecorator(new Cat());
+
                 case TamagochiType.Dog:
                     return new Dog();
                 default:

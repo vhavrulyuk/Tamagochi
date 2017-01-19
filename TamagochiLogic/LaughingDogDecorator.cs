@@ -4,7 +4,7 @@ namespace TamagochiLogic
 {
     internal class LaughingDogDecorator : TamagochiDecorator
     {
-        public LaughingDogDecorator(ITamagochi tamagochi) : base(tamagochi)
+        public LaughingDogDecorator(Tamagochi tamagochi) : base(tamagochi)
         {
         }
         // Operation

@@ -18,7 +18,7 @@
             </RowDefinition>
         </Grid.RowDefinitions>
         <TextBox Grid.Row="0" x:Name="petName" Height="50" FontSize="32" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontStyle="Italic" BorderBrush="#FF1F4CD6" Background="#FFE20D78" Foreground="#FFFFD2D2" MinWidth="150" MinHeight="43" Margin="75,90,0,60" AutoWordSelection="False" AcceptsTab="True" IsUndoEnabled="False" MaxLength="10" MaxLines="1" MinLines="1" Binding.TargetUpdated="petName_TargetUpdated" Text="{Binding Path=TamagochiName}"></TextBox>
-        <Button Style="{StaticResource ButonsOnStartGameDialogStyle}" Grid.Row="1" Content="Готово" Command="{Binding Path=CreateNewTamagochiCommand}"/>
+        <Button Style="{StaticResource ButonsOnStartGameDialogStyle}" Grid.Row="1" Content="Готово" Command="{Binding Path=CreateNewTamagochiCommand}" Click="Button_Click_1"/>
         <Label x:Name="label" Content="Кличка електронного улюбленця :)" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Navy"/>
     </Grid>
 </Page>

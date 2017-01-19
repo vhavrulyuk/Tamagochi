@@ -15,7 +15,6 @@ D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КП
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\bin\Debug\TamagochiLogic.dll
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\bin\Debug\TamagochiLogic.pdb
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Tamagochi.csprojResolveAssemblyReference.cache
-D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\bin\Debug\System.Threading.Timer.dll
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Views\ChoosePetPage.g.cs
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Views\MainWindow.g.cs
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Views\setPetNamePage.g.cs
@@ -42,3 +41,4 @@ D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КП
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Views\MainWindow.baml
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Views\setPetNamePage.baml
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Views\StartNewGameDialogNavigation.baml
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\Tamagochi\obj\Debug\Tamagochi_Content.g.cs

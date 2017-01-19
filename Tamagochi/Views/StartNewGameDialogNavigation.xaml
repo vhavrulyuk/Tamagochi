@@ -10,10 +10,12 @@
     <Grid Margin="3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="67*"></ColumnDefinition>
+            <ColumnDefinition Width="35*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="281*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="textBlockInvitation" Margin="20,113,18,138" TextWrapping="Wrap" Background="#FFFFC500" Height="112" FontSize="18.667" FontWeight="Bold" Foreground="#FD24A7D8" Text="Будь-ласка, виберіть собі улюбленця." TextAlignment="Center" MinWidth="112" MaxWidth="112" MinHeight="112" MaxHeight="112"/>
         <Frame x:Name="PageContainer" Source="ChoosePetPage.xaml"
-               BorderBrush="Blue" BorderThickness="1" Margin="14,0,0,0" Grid.Column="1" Navigated="Frame_Navigated"/>
+               BorderBrush="Blue" BorderThickness="1" Margin="14,0,0,0" Grid.Column="1" Navigated="Frame_Navigated" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

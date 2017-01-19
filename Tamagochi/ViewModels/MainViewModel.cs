@@ -48,6 +48,7 @@ namespace Tamagochi.ViewModels
         {
             _createNewTamagochiCommand = new CreateNewTamagochiCommand(this);
             TamagochiName = "test";
+          
         }
 
     }

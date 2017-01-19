@@ -1,13 +1,17 @@
 using System;
+using System.Diagnostics;
+using System.ServiceModel.Channels;
 using System.Threading;
+using System.Windows.Threading;
 using TamagochiLogic;
 
 public class GameManager {
 
     // Attributes and properties
-    private Tamagochi _tamagochi = null;
+    private double secondsBetweenSounds = 9;
+    private ITamagochi _tamagochi = null;
     private int points;
-    private Timer timer = null;
+    private DispatcherTimer timer = null;
 
     private static GameManager _instance = null;
 
@@ -25,6 +29,10 @@ public class GameManager {
 
     private GameManager()
     {
+        timer = new DispatcherTimer();
+        timer.Stop();
+        
+
     }
 
     public void CreateTamagochi(TamagochiType type, string name)
@@ -33,11 +41,25 @@ public class GameManager {
         {
             _tamagochi = TamagochiCreator.CreateTamagochi(type);
             _tamagochi.Name = name;
+            Debug.WriteLine(_tamagochi.Name);
+            timer.Tick += ProduceSound_Timer_Tick;
+            timer.Interval = TimeSpan.FromSeconds(secondsBetweenSounds);
+            timer.Start();
         }
         else
         {
             throw new InvalidOperationException();
         }
+    }
+
+    private void ProduceSound_Timer_Tick(object sender, EventArgs e)
+    {
+        _tamagochi.ProduceSound();
+    }
+
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 
     // Operation
