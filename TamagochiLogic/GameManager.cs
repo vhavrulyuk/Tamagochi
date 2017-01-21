@@ -32,7 +32,6 @@ public class GameManager {
         timer = new DispatcherTimer();
         timer.Stop();
         
-
     }
 
     public void CreateTamagochi(TamagochiType type, string name)
@@ -45,6 +44,7 @@ public class GameManager {
             timer.Tick += ProduceSound_Timer_Tick;
             timer.Interval = TimeSpan.FromSeconds(secondsBetweenSounds);
             timer.Start();
+            Debug.WriteLine(_tamagochi.Health);
         }
         else
         {

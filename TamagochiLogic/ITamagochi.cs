@@ -9,6 +9,7 @@ namespace TamagochiLogic
     public interface ITamagochi
     {
         string Name { get; set; }
+        int Health { get; set; }
         void Play(TamagochiGame game);
         void Teach();
         void Eat(SolidFood food);

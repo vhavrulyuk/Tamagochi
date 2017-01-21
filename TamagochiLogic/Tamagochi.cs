@@ -22,6 +22,12 @@ namespace TamagochiLogic
             set { name = value; }
         }
 
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
         // Operation
         // param game
         // return 

@@ -14,6 +14,12 @@ namespace TamagochiLogic
             set { tamagochi.Name = value; }
         }
 
+        public int Health
+        {
+            get { return tamagochi.Health; }
+            set { tamagochi.Health = value; }
+        }
+
         public TamagochiDecorator(Tamagochi tamagochi)
         {
             this.tamagochi = tamagochi;

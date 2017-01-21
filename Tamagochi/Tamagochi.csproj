@@ -126,6 +126,7 @@
     <SplashScreen Include="Pictures\splashScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Pictures\icon-blue-health.png" />
     <Resource Include="Pictures\Play-Now-button.png" />
   </ItemGroup>
   <ItemGroup>

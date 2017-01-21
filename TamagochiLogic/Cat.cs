@@ -6,7 +6,11 @@ namespace TamagochiLogic
 {
     internal class Cat : Tamagochi
     {
-        
+        public Cat()
+        {
+            Health = 100;
+        }
+
         private string pathToMaoSounFile = @".\Audio\CatSounds\mao.mp3";
 
 

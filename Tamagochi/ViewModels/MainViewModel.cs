@@ -14,6 +14,7 @@ namespace Tamagochi.ViewModels
     class MainViewModel : INotifyPropertyChanged
     {
         private string _tamagochiName;
+        private int _tamagochiHealth;
         private CreateNewTamagochiCommand _createNewTamagochiCommand;
 
         public ITamagochi CurrentTamagochi
@@ -30,6 +31,16 @@ namespace Tamagochi.ViewModels
             }
         }
 
+        public int TamagochiHealth
+        {
+            get { return _tamagochiHealth; }
+            set
+            {
+                _tamagochiHealth = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TamagochiHealth"));
+            }
+        }
+
         public ICommand CreateNewTamagochiCommand
         {
             get { return _createNewTamagochiCommand; }
@@ -42,13 +53,17 @@ namespace Tamagochi.ViewModels
         {
             GameManager.Instance.CreateTamagochi(Type, TamagochiName);            
             MessageBox.Show("New tamagochi created!");
+            
         }
 
         public MainViewModel()
         {
             _createNewTamagochiCommand = new CreateNewTamagochiCommand(this);
             TamagochiName = "test";
-          
+           
+            //TamagochiHealth = 100;
+
+
         }
 
     }
