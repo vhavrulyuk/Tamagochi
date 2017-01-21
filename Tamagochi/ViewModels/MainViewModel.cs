@@ -11,33 +11,40 @@ using TamagochiLogic;
 
 namespace Tamagochi.ViewModels
 {
-    class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
-        private string _tamagochiName;
-        private int _tamagochiHealth;
         private CreateNewTamagochiCommand _createNewTamagochiCommand;
+        private string _newTamagochiName;
 
-        public ITamagochi CurrentTamagochi
-        {
-            get { return GameManager.Instance.Tamagochi; }
-        }
+        public ITamagochi CurrentTamagochi => GameManager.Instance.Tamagochi;
+
         public string TamagochiName
         {
-            get { return _tamagochiName; }
+            get { return _newTamagochiName; }
             set
             {
-                _tamagochiName = value;
+                _newTamagochiName = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TamagochiName"));
             }
         }
 
-        public int TamagochiHealth
+        public string ActualTamagochiName
         {
-            get { return _tamagochiHealth; }
+            get { return GameManager.Instance.Tamagochi?.Name; }
             set
             {
-                _tamagochiHealth = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TamagochiHealth"));
+                GameManager.Instance.Tamagochi.Name = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiName"));
+            }
+        }
+
+        public int? ActualTamagochiHealth
+        {
+            get { return GameManager.Instance.Tamagochi?.Health; }
+            set
+            {
+                GameManager.Instance.Tamagochi.Health = value.GetValueOrDefault();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiHealth"));
             }
         }
 
@@ -45,13 +52,16 @@ namespace Tamagochi.ViewModels
         {
             get { return _createNewTamagochiCommand; }
         }
+
         private TamagochiType Type { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         internal void createNewTamagochi(object sender)
         {
-            GameManager.Instance.CreateTamagochi(Type, TamagochiName);            
+            GameManager.Instance.CreateTamagochi(Type, TamagochiName);
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiHealth"));
             MessageBox.Show("New tamagochi created!");
             
         }
@@ -59,12 +69,8 @@ namespace Tamagochi.ViewModels
         public MainViewModel()
         {
             _createNewTamagochiCommand = new CreateNewTamagochiCommand(this);
+
             TamagochiName = "test";
-           
-            //TamagochiHealth = 100;
-
-
         }
-
     }
 }

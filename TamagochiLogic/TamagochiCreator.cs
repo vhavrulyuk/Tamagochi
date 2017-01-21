@@ -10,16 +10,26 @@ namespace TamagochiLogic
     {
         public static ITamagochi CreateTamagochi(TamagochiType type)
         {
+            ITamagochi tamagochi;
             switch (type)
             {
                 case TamagochiType.Cat:
-                    return new DrumNoiseDecorator(new Cat());
-
+                    tamagochi = new Cat();
+                    break;
                 case TamagochiType.Dog:
-                    return new Dog();
+                    tamagochi = new Dog();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            Initialize(tamagochi);
+            return tamagochi;
         }
+
+        static void Initialize(ITamagochi tamagochi)
+        {
+            tamagochi.Health = 100;
+        }
+
     }
 }

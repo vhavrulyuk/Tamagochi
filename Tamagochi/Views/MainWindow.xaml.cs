@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Media;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using TamagochiLogic;
+using Tamagochi.ViewModels;
 
 namespace Tamagochi
 {
@@ -22,16 +10,13 @@ namespace Tamagochi
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainViewModel _vm;
         public MainWindow()
         {
-            
+            _vm = new MainViewModel();
+            DataContext = _vm;
             InitializeComponent();
-            //TamagochiLogic.GameManager gm = new GameManager();
         }
-
-        
-
-
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -39,10 +24,8 @@ namespace Tamagochi
             soundPlayer.SoundLocation = "Audio/startGame.wav";
             soundPlayer.Play();
             
-            StartNewGameDialogNavigation start = new StartNewGameDialogNavigation();
+            StartNewGameDialogNavigation start = new StartNewGameDialogNavigation(_vm);
             start.ShowDialog();
-
-
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

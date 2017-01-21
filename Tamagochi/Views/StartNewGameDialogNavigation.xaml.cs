@@ -21,10 +21,10 @@ namespace Tamagochi
     /// </summary>
     public partial class StartNewGameDialogNavigation : Window
     {
-        public StartNewGameDialogNavigation()
+        public StartNewGameDialogNavigation(MainViewModel context)
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = context;
             //ColorAnimation colorAnimation = new ColorAnimation();
             //colorAnimation.To = Colors.BlueViolet;
             //colorAnimation.Duration = TimeSpan.Parse ("0:0:15");
