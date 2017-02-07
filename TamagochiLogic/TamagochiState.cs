@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace TamagochiLogic
 {
@@ -12,7 +12,7 @@ namespace TamagochiLogic
         public int Water { get; set; }
         public string Name { get; set; }
         public long Age { get; set; }
-
+        //Для отримання стану з обєкту тамагочі 
         public TamagochiState(int bellyful, int intellect, int happiness, int health, int water, string name, long age)
         {
             Bellyful = bellyful;
@@ -23,7 +23,7 @@ namespace TamagochiLogic
             Name = name;
             Age = age;
         }
-
+        //Для отримання стану з файлу а диску
         public TamagochiState()
         {
         }
