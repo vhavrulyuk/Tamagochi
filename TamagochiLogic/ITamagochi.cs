@@ -10,13 +10,24 @@ namespace TamagochiLogic
     {
         string Name { get; set; }
         int Health { get; set; }
+        int Bellyful { get; set; }
+        int Intellect { get; set; }
+        int Hapiness { get; set; }
+        int Water { get; set; }
+        long Age { get; set; }
+
+
+
         void Play(TamagochiGame game);
         void Teach();
         void Eat(SolidFood food);
         void Drink(LiquidFood drink);
         void Cure(Medicine medicine);
         void ProduceSound();
-        TamagochiState GetState();
+        //SaveMemento();
+        TamagochiState Save();
+        //RestoreMemento(TamagochiState tamagochiState);
+        void Load(TamagochiState tamagochiState);
         void Update(long time);
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.TeamFoundation.Common;
+using Tamagochi.Models;
 using TamagochiLogic;
 
 namespace Tamagochi.ViewModels
@@ -48,6 +49,13 @@ namespace Tamagochi.ViewModels
             }
         }
 
+
+        //public TamagochiState ActualTamagochiState
+        //{
+        //    get { return GameManager.Instance.Tamagochi.Save(); }
+        //    set { GameManager.Instance.Tamagochi.Load(value); }
+        //}
+
         public ICommand CreateNewTamagochiCommand
         {
             get { return _createNewTamagochiCommand; }
@@ -63,7 +71,17 @@ namespace Tamagochi.ViewModels
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiHealth"));
             MessageBox.Show("New tamagochi created!");
-            
+            //GameManager.Instance.Tamagochi.Health = 85;
+           // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiHealth"));
+
+        }
+
+        public void LoadGame(object sender)
+        {
+            InMemoryGameStateManager memoryGameStateManager = new InMemoryGameStateManager();
+            memoryGameStateManager.LoadStateFromHdd();
+            GameManager.Instance.Tamagochi.Load(memoryGameStateManager.Memento.TamagochiState);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiHealth"));
         }
 
         public MainViewModel()

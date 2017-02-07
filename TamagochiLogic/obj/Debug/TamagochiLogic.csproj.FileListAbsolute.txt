@@ -40,3 +40,6 @@ D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КП
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\System.Data.OracleClient.dll
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\System.Configuration.Install.dll
 D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\System.EnterpriseServices.Wrapper.dll
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\PresentationFramework.dll
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\System.Printing.dll
+D:\ЛП\Програмна інженерія\3курс\КПЗ\заочна_КПЗ\CSharp Projects\lab4Tamagochi\Tamagochi\TamagochiLogic\bin\Debug\ReachFramework.dll

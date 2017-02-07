@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\InMemoryGameStateManager.cs" />
     <Compile Include="ViewModels\CreateNewTamagochiCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ChoosePetPage.xaml.cs">
@@ -153,6 +154,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Audio\CatSounds\mao.mp3" />
+    <Resource Include="Pictures\close.png" />
+    <Resource Include="Pictures\Load.png" />
+    <Resource Include="Pictures\Save.png" />
+    <Resource Include="Pictures\start.png" />
+    <Resource Include="start.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

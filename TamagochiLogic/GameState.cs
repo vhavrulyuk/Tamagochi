@@ -1,26 +1,42 @@
 using System;
+using Microsoft.Win32;
+using TamagochiLogic;
 
 
+
+//Memento
 public class GameState {
+    private int _points;
+    private TamagochiState _tamagochiState;
 
-  // Attributes and properties
-  protected TamagochiState tamagochState;
-  protected int points;
+    public TamagochiState TamagochiState {
+        get { return _tamagochiState; }
+        set {_tamagochiState = value; }
+    }
 
-  // Associations 
-  private TamagochiState unnamed_2;
+    public int Points
+    {
+        get
+        {
+            return _points;
+        }
 
-  // Operation
-  // return TamagochiState
-  public TamagochiState getTamagochiState ()
-  {
-    throw new System.Exception ("Not implemented yet!");
-  }
-  // Operation
-  // param state
-  public void setTamagochiState (TamagochiState state)
-  {
-  }
+        set
+        {
+            _points = value;
+        }
+    }
 
+    public GameState(int points)
+    {
+        TamagochiState = GameManager.Instance.Tamagochi.Save();
+        Points = points;
+    }
+
+    public GameState()
+    {
+        TamagochiState = new TamagochiState();
+        Points = 0;
+    }
 }
 

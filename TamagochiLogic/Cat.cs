@@ -21,10 +21,10 @@ namespace TamagochiLogic
             
         }
 
-        public override TamagochiState GetState()
+       /* public override TamagochiState GetState()
         {
             throw new System.Exception("Not implemented yet!");
-        }
+        }*/
 
     }
 }

@@ -29,6 +29,11 @@ namespace TamagochiLogic
         static void Initialize(ITamagochi tamagochi)
         {
             tamagochi.Health = 100;
+            tamagochi.Age = 0;
+            tamagochi.Bellyful = 75;
+            tamagochi.Hapiness = 55;
+            tamagochi.Intellect = 15;
+            tamagochi.Water = 25;
         }
 
     }

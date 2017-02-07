@@ -20,6 +20,12 @@ namespace TamagochiLogic
             set { tamagochi.Health = value; }
         }
 
+        public int Bellyful { get; set; }
+        public int Intellect { get; set; }
+        public int Hapiness { get; set; }
+        public int Water { get; set; }
+        public long Age { get; set; }
+
         public TamagochiDecorator(Tamagochi tamagochi)
         {
             this.tamagochi = tamagochi;
@@ -72,10 +78,20 @@ namespace TamagochiLogic
 
         // Operation
         // return TamagochiState
-        public virtual TamagochiState GetState()
+        //public virtual TamagochiState GetState()
+        //{
+        //    return tamagochi.GetState();
+        //}
+        public TamagochiState Save()
         {
-            return tamagochi.GetState();
+            throw new NotImplementedException();
         }
+
+        public void Load(TamagochiState tamagochiState)
+        {
+            throw new NotImplementedException();
+        }
+
 
         // Operation
         // param time

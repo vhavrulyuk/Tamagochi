@@ -1,36 +1,27 @@
 using System;
+using System.Windows;
 using System.Windows.Media;
 
 namespace TamagochiLogic
 {
     internal abstract class Tamagochi : ITamagochi
     {
-
-        // Attributes and properties
-        protected int bellyful;
-        protected int intellect;
-        protected int hapiness;
-        protected int health;
-        protected int water;
-        protected string name;
-        protected long age;
+        /*protected int _bellyful;
+        protected int _intellect;
+        protected int _health;
+        protected int _water;
+        protected string _name;
+        protected long _age;*/
         protected MediaPlayer mp;
 
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get; set; }
+        public int Health { get; set; }
+        public int Bellyful { get; set; }
+        public int Intellect { get; set; }
+        public int Hapiness { get; set; }
+        public int Water { get; set; }
+        public long Age { get; set; }
 
-        public int Health
-        {
-            get { return health; }
-            set { health = value; }
-        }
-
-        // Operation
-        // param game
-        // return 
         public virtual void Play(TamagochiGame game)
         {
             throw new System.Exception("Not implemented yet!");
@@ -69,65 +60,33 @@ namespace TamagochiLogic
 
         // Operation
         public abstract void ProduceSound();
-        
+        //Save Tamagochi state
+        public TamagochiState Save()
+        {
+            MessageBox.Show("Saving Tamagochi state...");
+            return new TamagochiState(Bellyful, Intellect, Hapiness, Health, Water, Name, Age);
+        }
+        //Restore Tamagochi State
+        public void Load(TamagochiState tamagochiState)
+        {
+            MessageBox.Show("Restoring Tamagochi state...");
+            Bellyful = tamagochiState.Bellyful;
+            Intellect = tamagochiState.Intellect;
+            Hapiness = tamagochiState.Hapiness;
+            Health = tamagochiState.Health;
+            Water = tamagochiState.Water;
+            Name = tamagochiState.Name;
+            Age = tamagochiState.Age;
+        }
 
-// Operation
-// return TamagochiState
-        public abstract TamagochiState GetState();
-        // Operation
+        // return TamagochiState
         // param time
         public virtual void Update(long time)
         {
             throw new System.Exception("Not implemented yet!");
         }
 
-        // Operation
-        // return int
-        public virtual int GetBellyful()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
 
-        // Operation
-        // return int
-        public virtual int GetIntelect()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
-
-        // Operation
-        // return int
-        public virtual int GetHapiness()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
-
-        // Operation
-        // return int
-        public virtual int GetHealth()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
-
-        // Operation
-        // return int
-        public virtual int GetWater()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
-
-        // Operation
-        // return long
-        public virtual long GetAge()
-        {
-            throw new System.Exception("Not implemented yet!");
-        }
-
-        // Operation
-        // param age
-        public virtual void SetAge(long ageUpdate)
-        {
-        }
 
     }
 }

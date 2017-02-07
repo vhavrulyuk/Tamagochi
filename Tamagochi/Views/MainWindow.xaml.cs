@@ -1,7 +1,9 @@
 ﻿using System.Media;
 using System.Windows;
 using System.Windows.Input;
+using Tamagochi.Models;
 using Tamagochi.ViewModels;
+using TamagochiLogic;
 
 namespace Tamagochi
 {
@@ -23,10 +25,18 @@ namespace Tamagochi
             SoundPlayer soundPlayer = new SoundPlayer();
             soundPlayer.SoundLocation = "Audio/startGame.wav";
             soundPlayer.Play();
-            
+
             StartNewGameDialogNavigation start = new StartNewGameDialogNavigation(_vm);
             start.ShowDialog();
         }
+
+        private void SaveGame(object sender, RoutedEventArgs e)
+        {
+            InMemoryGameStateManager memoryGameStateManager = new InMemoryGameStateManager();
+            memoryGameStateManager.Memento = new GameState(100);
+            memoryGameStateManager.SaveStateOnHDD();
+        }
+        
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -38,5 +48,9 @@ namespace Tamagochi
             this.Close();
         }
 
+        private void LoadGame(object sender, RoutedEventArgs e)
+        {
+            _vm.LoadGame(sender);
+        }
     }
 }
