@@ -26,13 +26,13 @@ public class GameState {
             _points = value;
         }
     }
-
+//для отримання стану з обєкту Тамагочі.
     public GameState(int points)
     {
         TamagochiState = GameManager.Instance.Tamagochi.Save();
         Points = points;
     }
-
+//Для отримання стану з файлу.
     public GameState()
     {
         TamagochiState = new TamagochiState();
