@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 namespace TamagochiLogic
 {
@@ -8,7 +9,7 @@ namespace TamagochiLogic
         // Operation
         public override void ProduceSound()
         {
-            throw new System.Exception("Not implemented yet!");
+            Debug.WriteLine("Playing standard Dog's sound");
         }
 
         //public override TamagochiState GetState()

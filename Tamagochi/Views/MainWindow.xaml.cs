@@ -27,6 +27,7 @@ namespace Tamagochi
             soundPlayer.Play();
 
             StartNewGameDialogNavigation start = new StartNewGameDialogNavigation(_vm);
+            start.DataContext = _vm;
             start.ShowDialog();
         }
 
@@ -50,7 +51,9 @@ namespace Tamagochi
 
         private void LoadGame(object sender, RoutedEventArgs e)
         {
-            _vm.LoadGame(sender);
+            if (GameManager.Instance.Tamagochi != null)
+                _vm.LoadGame(sender);
+            else MessageBox.Show("Tamagochi ще не створено, стовріть його і присвойте йому цей стан!");
         }
     }
 }

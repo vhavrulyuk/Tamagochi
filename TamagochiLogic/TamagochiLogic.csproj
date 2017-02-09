@@ -43,6 +43,7 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="DrumNoiseDecorator.cs" />
+    <Compile Include="EnumBooleanConverter.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="FoodCommon.cs" />
     <Compile Include="Fruit.cs" />
@@ -60,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RadioButtonCheckedConverter.cs" />
     <Compile Include="SolidFood.cs" />
     <Compile Include="Tamagochi.cs" />
     <Compile Include="TamagochiCreator.cs" />

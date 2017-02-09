@@ -8,6 +8,7 @@ using TamagochiLogic;
 public class GameState {
     private int _points;
     private TamagochiState _tamagochiState;
+    
 
     public TamagochiState TamagochiState {
         get { return _tamagochiState; }
@@ -26,13 +27,13 @@ public class GameState {
             _points = value;
         }
     }
-//РґР»СЏ РѕС‚СЂРёРјР°РЅРЅСЏ СЃС‚Р°РЅСѓ Р· РѕР±С”РєС‚Сѓ РўР°РјР°РіРѕС‡С–.
+    //для отримання стану з обєкту Тамагочі.
     public GameState(int points)
     {
         TamagochiState = GameManager.Instance.Tamagochi.Save();
         Points = points;
     }
-//Р”Р»СЏ РѕС‚СЂРёРјР°РЅРЅСЏ СЃС‚Р°РЅСѓ Р· С„Р°Р№Р»Сѓ.
+    //Для отримання стану з файлу.
     public GameState()
     {
         TamagochiState = new TamagochiState();

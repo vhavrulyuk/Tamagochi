@@ -13,18 +13,22 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Tamagochi.ViewModels;
+using TamagochiLogic;
 
 namespace Tamagochi
+
 {
     /// <summary>
     /// Логика взаимодействия для StartNewGameDialogNavigation.xaml
     /// </summary>
     public partial class StartNewGameDialogNavigation : Window
     {
-        public StartNewGameDialogNavigation(MainViewModel context)
+       public StartNewGameDialogNavigation(MainViewModel context)
         {
             InitializeComponent();
+            
             DataContext = context;
+            
             //ColorAnimation colorAnimation = new ColorAnimation();
             //colorAnimation.To = Colors.BlueViolet;
             //colorAnimation.Duration = TimeSpan.Parse ("0:0:15");

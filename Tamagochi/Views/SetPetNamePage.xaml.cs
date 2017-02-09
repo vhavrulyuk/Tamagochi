@@ -31,6 +31,7 @@ namespace Tamagochi
         private void Button_Click(object sender, RoutedEventArgs e)
 
         {
+            
             SoundPlayer soundPlayer = new SoundPlayer();
             soundPlayer.SoundLocation = "Audio/nextPage.wav";
             soundPlayer.Play();

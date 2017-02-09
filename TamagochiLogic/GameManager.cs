@@ -45,6 +45,7 @@ public class GameManager {
             timer.Interval = TimeSpan.FromSeconds(secondsBetweenSounds);
             timer.Start();
             Debug.WriteLine(_tamagochi.Health);
+            Debug.WriteLine(_tamagochi.GetType().ToString());
         }
         else
         {

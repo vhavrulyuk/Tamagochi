@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -14,6 +15,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tamagochi.ViewModels;
+using TamagochiLogic;
 
 
 namespace Tamagochi
@@ -25,8 +28,12 @@ namespace Tamagochi
     {
         public ChoosePetPage()
         {
+            
+            //DataContext = context;
+            //context.NewTamagochiType = TamagochiType.Cat;
             InitializeComponent();
             
+
             DoubleAnimation animateHeight = new DoubleAnimation();
             animateHeight.From = 15;
             animateHeight.To = 110;
@@ -38,9 +45,9 @@ namespace Tamagochi
             animateWidth.Duration = TimeSpan.Parse("0:0:3");
 
             Storyboard sbKitty = new Storyboard();
-            
+
             sbKitty.Duration = TimeSpan.Parse("0:0:4");
-           
+
 
             sbKitty.Children.Add(animateHeight);
             sbKitty.Children.Add(animateWidth);
@@ -76,6 +83,7 @@ namespace Tamagochi
         private void Button_Click(object sender, RoutedEventArgs e)
 
         {
+
             SoundPlayer soundPlayer = new SoundPlayer
             {
                 SoundLocation = "Audio/nextPage.wav"
@@ -84,6 +92,7 @@ namespace Tamagochi
             NavigationService nav;
             nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new System.Uri("/Views/SetPetNamePage.xaml", UriKind.RelativeOrAbsolute));
+            
         }
 
         private void UIElement_OnMouseEnter(object sender, MouseEventArgs e)
