@@ -53,6 +53,13 @@ public class GameManager {
         }
     }
 
+    public void RestoreTamagochi(GameState memento)
+    {
+        _tamagochi = TamagochiRestorer.RestoreTamagochi(memento);
+    }
+
+
+
     private void ProduceSound_Timer_Tick(object sender, EventArgs e)
     {
         _tamagochi.ProduceSound();

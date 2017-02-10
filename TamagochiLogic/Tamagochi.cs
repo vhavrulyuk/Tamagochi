@@ -15,7 +15,7 @@ namespace TamagochiLogic
         protected long _age;*/
         protected MediaPlayer mp;
 
-        private TamagochiType TamagochiType { get; set; }
+        private String TamagochiType { get; set; }
         public string Name { get; set; }
         public int Health { get; set; }
         public int Bellyful { get; set; }
@@ -65,13 +65,14 @@ namespace TamagochiLogic
         //Save Tamagochi state
         public TamagochiState Save()
         {
-           
-                MessageBox.Show("Saving Tamagochi state...");
-                //TamagochiType = GetType();
-                return new TamagochiState(Bellyful, Intellect, Hapiness, Health, Water, Name, Age /*, TamagochiType*/);
-           
-       }
-    
+
+            MessageBox.Show("Saving Tamagochi state...");
+            TamagochiType = GetType().ToString();
+            MessageBox.Show(TamagochiType);
+            return new TamagochiState(Bellyful, Intellect, Hapiness, Health, Water, Name, Age, TamagochiType);
+
+        }
+
         //Restore Tamagochi State
         public void Load(TamagochiState tamagochiState)
         {
@@ -83,7 +84,7 @@ namespace TamagochiLogic
             Water = tamagochiState.Water;
             Name = tamagochiState.Name;
             Age = tamagochiState.Age;
-            //TamagochiType = tamagochiState.TamagochiType;
+            TamagochiType = tamagochiState.TamagochiType;
         }
 
         // return TamagochiState

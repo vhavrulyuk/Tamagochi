@@ -100,7 +100,8 @@ namespace Tamagochi.ViewModels
         {
             InMemoryGameStateManager memoryGameStateManager = new InMemoryGameStateManager();
             memoryGameStateManager.LoadStateFromHdd();
-            GameManager.Instance.Tamagochi.Load(memoryGameStateManager.Memento.TamagochiState);
+            GameManager.Instance.RestoreTamagochi(memoryGameStateManager.Memento);
+            //GameManager.Instance.Tamagochi.Load(memoryGameStateManager.Memento.TamagochiState);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ActualTamagochiHealth"));
         }
 

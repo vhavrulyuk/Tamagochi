@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,69 +14,76 @@ namespace Tamagochi.Models
         private GameState _memento;
         public GameState Memento
         {
-            get{ return _memento;}
-            set{_memento = value;}
+            get { return _memento; }
+            set { _memento = value; }
         }
 
         public void SaveStateOnHDD()
         {
-            FileStream fout = null;
-            byte[] stateValues = new[]{ (byte)Memento.TamagochiState.Health,
-                                        (byte)Memento.TamagochiState.Age,
-                                        (byte)Memento.TamagochiState.Bellyful,
-                                        (byte)Memento.TamagochiState.Hapiness,
-                                        (byte)Memento.TamagochiState.Intellect,
-                                        (byte)Memento.TamagochiState.Water,
-                                        (byte)Memento.Points
-        };
-
+            StreamWriter fstr_out = null;
+            string stateString = Memento.TamagochiState.Health.ToString() + "," +
+                                 Memento.TamagochiState.Age.ToString() + "," +
+                                 Memento.TamagochiState.Bellyful.ToString() + "," +
+                                 Memento.TamagochiState.Hapiness.ToString() + "," +
+                                 Memento.TamagochiState.Intellect.ToString() + "," +
+                                 Memento.TamagochiState.Water.ToString() + "," +
+                                 Memento.TamagochiState.Name + "," +
+                                 Memento.TamagochiState.TamagochiType + "," +
+                                 Memento.Points;
             try
             {
-                fout = new FileStream("savedGameState.txt", FileMode.OpenOrCreate, FileAccess.Write);
-                fout.Write(stateValues, 0, stateValues.Length);
-                MessageBox.Show("Збережено на диск");
+                fstr_out = new StreamWriter("savedGameState.txt");
+                fstr_out.Write(stateString);
             }
             catch (IOException exc)
             {
-                MessageBox.Show("IO Error" + exc.Message);
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
+                Console.WriteLine(exc.Message);
             }
             finally
             {
-                fout?.Close();
+                fstr_out?.Close();
             }
         }
 
         public void LoadStateFromHdd()
         {
-            FileStream fin = null;
+            StreamReader fstr_in = null;
+            string stateString;
             try
             {
-                fin = new FileStream("savedGameState.txt", FileMode.Open, FileAccess.Read);
+                fstr_in = new StreamReader("savedGameState.txt");
+                stateString = fstr_in.ReadLine();
+                string[] stateArray = stateString?.Split(',');
+                foreach (var str in stateArray)
+                {
+                    Debug.WriteLine(str);
+                }
+               
                 _memento = new GameState();
-                _memento.TamagochiState.Health = fin.ReadByte();
-                _memento.TamagochiState.Age = fin.ReadByte();
-                _memento.TamagochiState.Bellyful = fin.ReadByte();
-                _memento.TamagochiState.Hapiness = fin.ReadByte();
-                _memento.TamagochiState.Intellect = fin.ReadByte();
-                _memento.TamagochiState.Water = fin.ReadByte();
-                _memento.Points = fin.ReadByte();
+                _memento.TamagochiState.Health = Int32.Parse(stateArray[0]);
+                _memento.TamagochiState.Age = Int32.Parse(stateArray[1]);
+                _memento.TamagochiState.Bellyful = Int32.Parse(stateArray[2]);
+                _memento.TamagochiState.Hapiness = Int32.Parse(stateArray[3]);
+                _memento.TamagochiState.Intellect = Int32.Parse(stateArray[4]);
+                _memento.TamagochiState.Water = Int32.Parse(stateArray[5]);
+                _memento.TamagochiState.Name = stateArray[6];
+                _memento.TamagochiState.TamagochiType = stateArray[7];
+                _memento.Points = Int32.Parse(stateArray[8]);
                 MessageBox.Show("Завантажено з диску");
             }
             catch (IOException exc)
             {
-                MessageBox.Show("Помилка вводу виводу" + exc.Message);
+                MessageBox.Show("Помилка відкриття файлу" + exc.Message);
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }
+
+
             finally
             {
-                fin?.Close();
+                fstr_in?.Close();
             }
 
         }

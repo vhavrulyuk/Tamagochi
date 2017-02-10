@@ -67,6 +67,7 @@
     <Compile Include="TamagochiCreator.cs" />
     <Compile Include="TamagochiDecorator.cs" />
     <Compile Include="TamagochiGame.cs" />
+    <Compile Include="TamagochiRestorer.cs" />
     <Compile Include="TamagochiState.cs" />
     <Compile Include="TamagochiType.cs" />
   </ItemGroup>

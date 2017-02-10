@@ -5,7 +5,7 @@ namespace TamagochiLogic
     //part of memento
     public class TamagochiState
     {
-        //public string TamagochiType { get; set; }
+        public string TamagochiType { get; set; }
         public int Bellyful { get; set; }
         public int Intellect { get; set; }
         public int Hapiness { get; set; }
@@ -14,7 +14,7 @@ namespace TamagochiLogic
         public string Name { get; set; }
         public long Age { get; set; }
         //Для отримання стану з обєкту тамагочі 
-        public TamagochiState(int bellyful, int intellect, int happiness, int health, int water, string name, long age /*string tamagochiType*/)
+        public TamagochiState(int bellyful, int intellect, int happiness, int health, int water, string name, long age, string tamagochiType)
         {
             Bellyful = bellyful;
             Intellect = intellect;
@@ -23,7 +23,7 @@ namespace TamagochiLogic
             Water = water;
             Name = name;
             Age = age;
-            //TamagochiType = tamagochiType;
+            TamagochiType = tamagochiType;
         }
         //Для отримання стану з файлу а диску
         public TamagochiState()

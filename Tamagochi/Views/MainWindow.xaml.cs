@@ -51,9 +51,8 @@ namespace Tamagochi
 
         private void LoadGame(object sender, RoutedEventArgs e)
         {
-            if (GameManager.Instance.Tamagochi != null)
-                _vm.LoadGame(sender);
-            else MessageBox.Show("Tamagochi ще не створено, стовріть його і присвойте йому цей стан!");
+            _vm.LoadGame(sender);
+           
         }
     }
 }
