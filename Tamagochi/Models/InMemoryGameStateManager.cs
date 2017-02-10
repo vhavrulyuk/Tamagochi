@@ -58,7 +58,6 @@ namespace Tamagochi.Models
                 {
                     Debug.WriteLine(str);
                 }
-               
                 _memento = new GameState();
                 _memento.TamagochiState.Health = Int32.Parse(stateArray[0]);
                 _memento.TamagochiState.Age = Int32.Parse(stateArray[1]);
@@ -79,8 +78,6 @@ namespace Tamagochi.Models
             {
                 MessageBox.Show(exc.Message);
             }
-
-
             finally
             {
                 fstr_in?.Close();
